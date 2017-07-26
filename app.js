@@ -52,9 +52,16 @@ function updateCurrentConditions(data){
 
         var options = {
           title: 'observed',
+
           is3D:true,
           legend: { position: 'bottom' },
-          explorer: { axis: 'vertical' }
+          explorer: { axis: 'vertical' },
+          
+          vAxis:{title: 'Hello', titleTextStyle: {color: '#FF0000'}}
+
+          
+
+
         };
 
         var chart = new google.visualization.LineChart(document.getElementById('HFgraph'));
@@ -62,7 +69,7 @@ function updateCurrentConditions(data){
         chart.draw(data, options);
       }
 
+// 
 
 
-
-// getData()
+getData()
