@@ -74,7 +74,7 @@ function dailygraph() {
 	var dailyDataArylength = state.data.daily.data.length;
 	var dailyDataArray = state.data.daily.data;
 	console.log('look here',dailyDataArylength)
-	var graphData =[['Day', 'High', 'tempLow']]
+	var graphData =[['Day', 'TempLow', 'TempHigh']]
 	for (i = 0; i < dailyDataArylength; i++) { 
 		mydailyDate= new Date(1000*dailyDataArray[i].time);
 		var daystring = mydailyDate.toString()
