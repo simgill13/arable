@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Arable by SiM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="shortcut icon" href="./arableicon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100" rel="stylesheet">
+   	<link href="https://fonts.googleapis.com/css?family=Josefin+Slab|Lobster|Play" rel="stylesheet">
+</head>
+
+<body>
+  
+	<div class="mainAppContainer">
+	 
+		<div class="leftBlueSideBar">
+
+			<div class="sidebarArableIcon">
+				<img class="arablewhiteicon" src="./whiteicon.png">
+			</div>
+			<div class="navigation">
+				<i class="fa fa-map-marker" aria-hidden="true"></i>
+			</div>
+			<div class="graphs">
+				<i class="fa fa-bar-chart" aria-hidden="true"></i>
+			</div>
+
+			<div class="divider"></div>
+
+			<div class="search">
+				<i class="fa fa-search" aria-hidden="true"></i>
+			</div>
+			<div class="settings">
+				<i class="fa fa-cog" aria-hidden="true"></i>
+			</div>
+			<div class="dividerLogout"></div>
+			<div class="logout">
+				<i class="fa fa-sign-out" aria-hidden="true"></i>
+			</div>
+		</div>
+
+
+
+
+
+		<div class="rightWhiteSideContainter">
+
+			<div class="deviceDescriptionArea">
+				<div class="deviceText">
+					<p class="textTop"> 342 L</p>
+				</div>
+
+				<div class="whereDescription">
+					<i class="fa fa-map-o" aria-hidden="true"></i>
+					<p class="whereText">Where</p>
+					<p class="addressText">Napa, CA 94558</p>
+					<p class="logandlatText">38.39139, -122.33772</p>
+					<div id="map" class="googlemap"></div>
+
+					<div class="deviceid">
+						<i class="fa fa-circle-thin" aria-hidden="true"></i>
+						<p class="deviceIdAndSync">Device Id</p>
+						<p class="deviceidNumber">A000030</p>	
+					</div>
+					<div class="lastSync">
+						<i class="fa fa-refresh" aria-hidden="true"></i>
+						<p class="deviceIdAndSync">Last Sync</p>
+						<p class="time">54 mins ago</p>	
+					</div>	
+				</div>
+			</div>
+
+
+			<div class="deviceDataWeather">
+				<div class="topNavdiv">	
+					<div class="DDWleftSide">
+						<div class="weathertab">
+							<p class="weatherText">Weather</p>
+						</div>
+						<div class="planttab">
+							<p class="planttext">Plant</p>
+						</div>
+					</div>
+					<div class="DDWrightSide">
+						<div class="moments">
+							<p class="momentstext">Moments</p>
+						</div>	
+					</div>
+				</div>
+
+				<div class="cndForcastWtnsRow">
+					<div class="currentCondtions">
+						<div class="CCtoptext">
+							<p class="CCtoptextinside">Current Conditions</p>
+						</div>
+						<p class="temptextd"> Temp</p>
+						<p class="temptextdegree tempnum"> 90<span class="littlezero">0</span></p>
+						<div class="progress">
+  							<div class="progress-bar temp" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+  							</div>
+						</div>
+						<p class="temptextdtwo"> Humidity</p>
+						<p class="temptextdegree humiditynumber"> 40<span class="littlezero">%</span></p>
+						<div class="progress height">
+  							<div class="progress-bar humidity " role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 0%; ">
+  							</div>
+						</div>
+						<p class="temptextdtwo"> Presure</p>
+						<p class="temptextdegree presurenumber"> 60<span class="littlezero">%</span></p>
+						<div class="progress height ">
+  							<div class="progress-bar height presurebar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="2000" style="width: 0%; ">
+  							</div>
+						</div>
+
+					</div>
+
+					<div class="tForcast">
+						<div class="CCtoptext">
+							<p class="CCtoptextinside">Today's Forcast</p>
+						</div>
+					</div>
+					<div class="wetnessreport">
+						<div class="CCtoptext">
+							<p class="CCtoptextinside">Wetness</p>
+						</div>
+					</div>	
+				</div>
+
+
+				<div class="bottomRow">
+					<div class="hourlyForcast">
+						<div class="HFtop">
+							<p class="hourlyforcastText">Hourly Forcast</p>
+						</div>
+						<div id="HFgraph" class="hourlyforcastGraph"></div>
+					</div>
+					<div class="dailyForcast">
+						<div class="HFtop">
+							<p class="hourlyforcastText">Daily Forcast</p>
+						</div>
+						<div id="DFgraph" class="dailyforcastGraph"></div>
+					</div>
+
+				</div>
+
+
+
+
+	
+			</div>
+
+
+
+
+		</div>
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+	<script src="https://use.fontawesome.com/b9c53e7f36.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="app.js"></script> 
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzirO9xOaJV2aMy7uoxJ5BjrTQMC17C_4&callback=initMap">
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,461 @@
+/* arable css */
+
+
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: white;
+	margin: 0;
+}
+*:focus{
+	outline:0;
+}
+
+
+/*The main App div*/
+
+.mainAppContainer{
+	width: 100%;
+	height: 100vh;
+	font-size: 0px;
+	min-width: 1100px;
+
+}
+
+
+
+/* The Blue Left Side bar && Right side white Area */
+
+.leftBlueSideBar,.rightWhiteSideContainter{
+	display: inline-block;
+	margin: 0px;
+	font-size: 0px;
+}
+
+.leftBlueSideBar{
+	text-align: center;
+	vertical-align: top;
+	height: 100vh;
+	width: 5%;
+	background-color: #002049;
+	padding: 0px;
+
+	/*max-width: 80px;
+	min-width: 80px;*/
+}
+
+.rightWhiteSideContainter{
+	vertical-align: top;
+	height: 100vh;
+	width: 95%;
+	/*background-color: grey;*/
+	padding: 0px;
+}
+.sidebarArableIcon{
+	margin-top: 30px;
+}
+.arablewhiteicon{
+	
+	height: 30px;
+	width: 30px;
+}
+.navigation{
+	margin-top: 60px;
+	
+	font-size: 14px;
+	background-color: #1773C6;
+	height: 58px;
+}
+.fa-map-marker{
+	color: white;
+	padding-top: 18px;
+}
+.graphs{
+	margin-top: 4px;
+	font-size: 14px;
+	height: 58px;
+}
+
+.fa-bar-chart{
+	color: white;
+	padding-top: 18px;
+}
+
+.divider{
+	width: 100%;
+	border-bottom: solid;
+    border-bottom-color: #405877;
+    margin-top: 79px;
+}
+
+
+.search{
+	margin-top: 4px;
+	font-size: 14px;
+	height: 58px;
+}
+
+.fa-search{
+	color: white;
+	padding-top: 18px;
+}
+.settings{
+	margin-top: 4px;
+	font-size: 14px;
+	height: 58px;
+}
+
+.fa-cog{
+	color: white;
+	padding-top: 18px;
+}
+
+.dividerLogout{
+	margin-top: 161px;
+	width: 100%;
+	border-bottom: solid;
+    border-bottom-color: #405877;
+   
+}
+.logout{
+	
+	font-size: 14px;
+	height: 58px;
+}
+
+.fa-sign-out{
+	color: white;
+	padding-top: 18px;
+}
+/*======   Navigation section end ==============*/
+
+
+
+/*======   Device description Left side  ==============*/
+
+.deviceDescriptionArea,.deviceDataWeather{
+	display: inline-block;
+}
+
+.deviceDescriptionArea{
+	z-index: 1000px;
+	border-right: solid;
+    vertical-align: top;
+    height: 100vh;
+    width: 30%;
+   /* background-color: green;*/
+    /*opacity: 0.3;*/
+    border-right-width: 1px;
+    border-right-color: #EEEDEF;
+
+}
+
+.deviceDataWeather{
+	vertical-align: top;
+	height: 100vh;
+	width: 70%;
+	/*background-color: yellow;*/
+	
+}
+
+.deviceText{
+	text-align: center;
+	margin: auto;
+	height: 40px;
+	width: 75%;
+	border-bottom-style: solid;
+	border-bottom-color: #EEEDEF;
+	border-bottom-width: 1px;
+}
+
+.textTop{
+	padding-top: 12px;
+	font-size: 19px;
+	color: black;
+
+
+}
+
+
+.whereDescription{
+	margin-top: 30px;
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	font-size: 21px;
+}
+
+.fa-map-o{
+	color: #EEEDEF;
+
+}
+.whereText{
+	font-size: 15px;
+    color: black;
+    margin-top: 10px;
+}
+.addressText{
+	font-size: 15px;
+    color: black;
+    margin-top: 10px;
+}
+.logandlatText{
+	margin-bottom: 34px;
+	font-size: 12px;
+    color: black;  
+}
+
+.googlemap{
+    height: 171px;
+    width: 80%;
+    margin: auto;
+}
+
+.deviceid,.lastSync{
+	display: inline-block;
+	margin-top: 10px;
+	margin-right: 0px;
+	margin-left: 0px;
+	padding: 0px;
+	border-bottom: solid;
+	border-bottom-color:  #EEEDEF;
+	border-bottom-width: 1px;
+}
+.deviceid{
+	width: 40%;
+	height: 100px;
+	border-right: solid;
+	border-right-color:  #EEEDEF;
+	border-right-width:1px;
+	font-size: 21px;
+
+}
+
+
+.lastSync{
+	margin-left: -5px;
+	width: 40%;
+	height: 100px;
+	
+}
+.fa-circle-thin{
+	padding-top: 10px;
+	color:  #EEEDEF;
+}
+
+.fa-refresh{
+	padding-top: 10px;
+	color: #EEEDEF;
+}
+
+.deviceIdAndSync{
+	padding-top: 7px;
+	font-size: 11px;
+}
+
+
+.deviceidNumber{
+	color: blue;
+	padding-top: 10px;
+	font-size: 12px;
+}
+
+.time{
+	padding-top: 10px;
+	font-size: 12px;
+}
+
+
+
+
+.topNavdiv{
+	width: 100%;
+	height: 40px;
+	border-bottom: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #EEEDEF;
+}
+
+.DDWleftSide{
+	display: inline-block;
+	width: 50%;
+	height: 100%;
+	text-align: left;
+}
+
+
+.DDWrightSide{
+	display: inline-block;
+	width: 50%;
+	height: 100%;
+	text-align: right;
+}
+
+
+
+.weathertab,.planttab{
+	display: inline-block;
+	width: 20%;
+	height: 40px;
+	border-right: solid;
+	border-right-width: 1px;
+	border-right-color:  #EEEDEF;
+	
+}
+
+.moments{
+	display: inline-block;
+	width: 20%;
+	height: 40px;
+	border-left: solid;
+	border-left-width: 1px;
+	border-left-color:  #EEEDEF;
+	
+	position: right;
+}
+
+.weatherText,.planttext{
+	padding-left: 15px;
+	padding-top: 23px;
+	font-size: 12px;
+	color: black;
+}
+.momentstext{
+	padding-right: 10px;
+	padding-top: 23px;
+	font-size: 12px;
+	color: black;
+}
+.weatherText{
+	border-bottom: solid blue;
+}
+
+
+.cndForcastWtnsRow{
+	margin-top: 10px;
+	width: 100%;
+	height: 280px;
+	/*border: solid black;*/
+	text-align: center;
+}
+
+
+.currentCondtions,.tForcast,.wetnessreport{
+	vertical-align: top;
+	display: inline-block;
+	height: 260px;
+	width: 30%;
+	border: solid;
+	border-width: 1px;
+	border-color: #EEEDEF;
+}
+
+.tForcast{
+	margin-left: 20px;
+	margin-right: 20px;
+}
+.CCtoptext{
+	width: 100%;
+	height: 50px;
+	
+	border: solid;
+	border-width: 1px;
+	border-color: #EEEDEF;
+}
+
+
+.CCtoptextinside{
+	padding-top: 20px;
+	text-align: left;
+	margin-left: 12px;
+	color: black;
+	font-size: 13px;
+}
+
+.progress{
+	    height: 5px !important;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.temptextd{
+	display: inline-block;
+	margin-left: 8px;
+	font-size: 10px;
+	color: black;
+	
+	margin-top: 10px;
+	margin-bottom: -9px;
+}
+.temptextdegree{
+	margin-top: -15px;
+	display: inline-block;
+	margin-right: 8px;
+	font-size: 10px;
+	color: black;
+	margin-left: 130px;
+	/*margin-top: 10px;*/
+	margin-bottom: -9px;
+}
+
+.littlezero{
+	font-size: 5px;
+}
+
+.temptextdtwo{
+	margin-top: -15px;
+	display: inline-block;
+	margin-left: 8px;
+	font-size: 10px;
+	color: black;
+	
+	
+	margin-bottom: -9px;
+}
+.height{
+	height: 5px;
+}
+.bottomRow{
+	width: 100%;
+	height: 300px;
+	
+	text-align: center;
+}
+
+.hourlyForcast,.dailyForcast{
+	vertical-align: top;
+	display: inline-block;
+	width: 45%;
+	height: 300px;
+	border: solid;
+
+	border-width: 1px;
+	border-color: #EEEDEF;
+
+}
+
+.dailyForcast{
+	margin-left: 20px;
+}
+
+
+.HFtop{
+	vertical-align: top;
+	width: 100%;
+	height: 40px;
+	border: solid;
+	border-width: 1px;
+	border-color: #EEEDEF;
+}
+
+.hourlyforcastText{
+	font-size: 12px;
+	color: black;
+	padding-top: 20px;
+}
+
