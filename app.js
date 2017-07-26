@@ -73,21 +73,27 @@ function drawChart() {
 function dailygraph() {
 	var dailyDataArylength = state.data.daily.data.length;
 	var dailyDataArray = state.data.daily.data;
-	var graphData =[['Day','Templow','Temphigh']]
+	console.log('look here',dailyDataArylength)
+	var graphData =[['Day', 'High', 'tempLow']]
 	for (i = 0; i < dailyDataArylength; i++) { 
 		mydailyDate= new Date(1000*dailyDataArray[i].time);
 		var daystring = mydailyDate.toString()
 		var day = daystring.slice(0,3)
 		var dayHigh = dailyDataArray[i].temperatureMax;
+		console.log(isNaN(dayHigh))
+		
 		var dayLow = dailyDataArray[i].temperatureMin;
 		graphData.push([day,dayLow,dayHigh]);   	
-	}	
+	}
+
+		console.log(graphData)
     var data = new google.visualization.arrayToDataTable(graphData);
 
     var options = {
     legend: { position: 'none' }, 
       chart: {
         title: 'observed',
+        
         subtitle: ''
       },
       bars: 'vertical', 
@@ -97,14 +103,14 @@ function dailygraph() {
       },
       axes: {
         x: {
-          days: {label: ''},
-          temp: {side: 'top', label: ''} 
+          days: {label: 'parsecs'}, // Bottom x-axis.
+          temp: {side: 'top', label: 'apparent magnitude'} // Top x-axis.
         }
       }
     };
 
-  	var chart = new google.charts.Bar(document.getElementById('DFgraph'));
-  	chart.draw(data, options);
+  var chart = new google.charts.Bar(document.getElementById('DFgraph'));
+  chart.draw(data, options);
 };
 
 
