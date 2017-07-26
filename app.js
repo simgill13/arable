@@ -25,7 +25,7 @@ var state = {
 
 $.ajax({
      url:"https://api.darksky.net/forecast/520daf995809f26a46e1ce03760f6786/38.39139,-122.33772",
-     dataType: 'jsonp', // Notice! JSONP <-- P (lowercase)
+     dataType: 'jsonp', 
      success:function(json){
         console.log(json)
          state.data = json;
@@ -41,13 +41,7 @@ $.ajax({
 
 
 
-// function getData() {
-// 	$.getJSON("https://api.darksky.net/forecast/520daf995809f26a46e1ce03760f6786/38.39139,-122.33772", function(data) {
-// 		state.data = data;
-// 		console.log('localstate',state.data);
-// 		updateCurrentConditions(state.data);
-// 	})
-// }
+
 
 function updateCurrentConditions(data){
 	$( ".tempnum" ).html(data.currently.temperature);
