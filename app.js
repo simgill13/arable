@@ -48,13 +48,10 @@ function drawChart() {
 	var startTime = startDate.toLocaleString().slice(11,23)
 	var endDate = new Date(1000*hourlyDataArray[11].time);
 	var endTime = endDate.toLocaleString().slice(11,23)
-	console.log('starttime',startTime)
 	$( ".hourlytime" ).html(startTime);
 	$( ".hourlyendtime" ).html(endTime);
 
-	
 	for (i = 0; i < 12; i++) { 
-    	
     	myDate= new Date(1000*hourlyDataArray[i].time);
     	time = (myDate.toLocaleString());
     	dirtyData = time.slice(11,13)
@@ -73,9 +70,61 @@ function drawChart() {
 }
 
 
+google.charts.setOnLoadCallback(dailyChart);
+
+  function dailyChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Mon', 20, 28, 38, 45],
+      ['Tue', 31, 38, 55, 66],
+      ['Wed', 50, 55, 77, 80],
+      ['Thu', 77, 77, 66, 50],
+      ['Fri', 68, 66, 22, 15]
+      // Treat first row as data as well.
+    ], true);
+
+    var options = {
+      legend:'none'
+    };
+
+    var chart = new google.visualization.CandlestickChart(document.getElementById('DFgraph'));
+
+    chart.draw(data, options);
+  }
+
+
+
+
+
+
+
+
+
 
 
 getData()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
