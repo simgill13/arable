@@ -33,7 +33,7 @@ function updateCurrentConditions(data){
 	$( ".tempnum" ).html(data.currently.temperature);
 	$( ".humiditynumber" ).html(data.currently.humidity);
 	$( ".presurenumber" ).html(data.currently.pressure);
- 	$(".temp").css("width", `${data.currently.temperature}`);
+ 	$(".temp").css("width", `${data.currently.temperature*2}`);
  	$(".humidity").css("width", `${data.currently.humidity}`);
  	$(".presurebar").css("width", `${data.currently.pressure /10}`);
 }
