@@ -38,38 +38,53 @@ function updateCurrentConditions(data){
  	$(".presurebar").css("width", `${data.currently.pressure /10}`);
 }
 
-		google.charts.load('current', {'packages':['corechart']});
-     	google.charts.setOnLoadCallback(drawChart);
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
 
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['hour',''],
-          ['1',  63.82],
-          ['2',  63.82],
-          ['3',  63.82],
-          ['4',  63.82]
-        ]);
+function drawChart() {
+	
+	console.log(state.data.hourly.data[0].time)
+	var hourlyDataArray = state.data.hourly.data;
+	console.log('lool',hourlyDataArray.length)
 
-        var options = {
-          title: 'observed',
+	var graphData =[['hour','']]
 
-          is3D:true,
-          legend: { position: 'bottom' },
-          explorer: { axis: 'vertical' },
-          
-          vAxis:{title: 'Hello', titleTextStyle: {color: '#FF0000'}}
+	for (i = 0; i < 12; i++) { 
+    	
+    	myDate= new Date(1000*hourlyDataArray[i].time);
+    	time = (myDate.toLocaleString());
+    	dirtyData = time.slice(11,13)
+    	var cleanData = dirtyData.replace(/:/i, '');
+    	// console.log('Look here', cleanData)
+    	var hourlyTemp = hourlyDataArray[i].temperature
+    	graphData.push([cleanData,hourlyTemp])
+	}
 
-          
+	console.log('2d',graphData)
+   
 
+    var data = google.visualization.arrayToDataTable(graphData);
 
-        };
+    var options = {
+      title: 'observed',
+      is3D:true,
+      legend: { position: 'none' },
+     
+      
+    };
 
-        var chart = new google.visualization.LineChart(document.getElementById('HFgraph'));
+    var chart = new google.visualization.LineChart(document.getElementById('HFgraph'));
 
-        chart.draw(data, options);
-      }
+    chart.draw(data, options);
+  }
 
 // 
 
 
 getData()
+
+
+
+
+
+
