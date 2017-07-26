@@ -62,35 +62,50 @@ function drawChart() {
     var data = google.visualization.arrayToDataTable(graphData);
     var options = {
       title: 'observed',
-      is3D:true,
       legend: { position: 'none' },  
     };
     var chart = new google.visualization.LineChart(document.getElementById('HFgraph'));
     chart.draw(data, options);
 }
+	google.charts.load('current', {'packages':['bar']});
+    google.charts.setOnLoadCallback(dailygraph);
 
-
-google.charts.setOnLoadCallback(dailyChart);
-
-  function dailyChart() {
-    var data = google.visualization.arrayToDataTable([
-      ['Mon', 20, 28, 38, 45],
-      ['Tue', 31, 38, 55, 66],
-      ['Wed', 50, 55, 77, 80],
-      ['Thu', 77, 77, 66, 50],
-      ['Fri', 68, 66, 22, 15]
-      // Treat first row as data as well.
-    ], true);
+function dailygraph() {
+	var dailyDataArylength = state.data.daily.data.length;
+	var dailyDataArray = state.data.daily.data;
+	var graphData =[['Day','Templow','Temphigh']]
+	for (i = 0; i < dailyDataArylength; i++) { 
+		mydailyDate= new Date(1000*dailyDataArray[i].time);
+		var daystring = mydailyDate.toString()
+		var day = daystring.slice(0,3)
+		var dayHigh = dailyDataArray[i].temperatureMax;
+		var dayLow = dailyDataArray[i].temperatureMin;
+		graphData.push([day,dayLow,dayHigh]);   	
+	}	
+    var data = new google.visualization.arrayToDataTable(graphData);
 
     var options = {
-      legend:'none'
+    legend: { position: 'none' }, 
+      chart: {
+        title: 'observed',
+        subtitle: ''
+      },
+      bars: 'vertical', 
+      series: {
+        0: { axis: 'days' }, 
+        1: { axis: 'temp' } 
+      },
+      axes: {
+        x: {
+          days: {label: ''},
+          temp: {side: 'top', label: ''} 
+        }
+      }
     };
 
-    var chart = new google.visualization.CandlestickChart(document.getElementById('DFgraph'));
-
-    chart.draw(data, options);
-  }
-
+  	var chart = new google.charts.Bar(document.getElementById('DFgraph'));
+  	chart.draw(data, options);
+};
 
 
 
