@@ -1,5 +1,5 @@
 //notes
-// if you are using Chrome you may get a cross origin issue 
+// if you are using Chrome/safarie you may get a cross origin issue 
 // since im not using a server,this chrome plugin should make everything work
 //https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi/related?hl=en
 
@@ -80,13 +80,9 @@ function dailygraph() {
 		var daystring = mydailyDate.toString()
 		var day = daystring.slice(0,3)
 		var dayHigh = dailyDataArray[i].temperatureMax;
-		console.log(isNaN(dayHigh))
-		
 		var dayLow = dailyDataArray[i].temperatureMin;
 		graphData.push([day,dayLow,dayHigh]);   	
 	}
-
-		console.log(graphData)
     var data = new google.visualization.arrayToDataTable(graphData);
 
     var options = {
