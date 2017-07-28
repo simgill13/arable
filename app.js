@@ -1,6 +1,5 @@
 //notes
 // if you are using Chrome/safarie you may get a cross origin issue 
-// since im not using a server,this chrome plugin should make everything work
 //https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi/related?hl=en
 
 
@@ -37,9 +36,6 @@ $.ajax({
          alert("Error");
      }      
 });
-
-
-
 
 
 
@@ -81,47 +77,40 @@ function drawChart() {
     var chart = new google.visualization.LineChart(document.getElementById('HFgraph'));
     chart.draw(data, options);
 }
-	google.charts.load('current', {'packages':['bar']});
-    google.charts.setOnLoadCallback(dailygraph);
 
-function dailygraph() {
-	var dailyDataArylength = state.data.daily.data.length;
-	var dailyDataArray = state.data.daily.data;
-	console.log('look here',dailyDataArylength)
-	var graphData =[['Day', 'TempLow', 'TempHigh']]
-	for (i = 0; i < dailyDataArylength; i++) { 
-		mydailyDate= new Date(1000*dailyDataArray[i].time);
-		var daystring = mydailyDate.toString()
-		var day = daystring.slice(0,3)
-		var dayHigh = dailyDataArray[i].temperatureMax;
-		var dayLow = dailyDataArray[i].temperatureMin;
-		graphData.push([day,dayLow,dayHigh]);   	
-	}
-    var data = new google.visualization.arrayToDataTable(graphData);
+
+
+
+google.charts.load('current', {'packages':['bar']});
+google.charts.setOnLoadCallback(dailyforcast);
+
+function dailyforcast() {
+    var dailyDataArylength = state.data.daily.data.length;
+     var dailyDataArray = state.data.daily.data;
+     console.log('look here',dailyDataArylength)
+     var graphData =[['Day', 'TempLow °', 'TempHigh  °']]
+     for (i = 0; i < dailyDataArylength; i++) { 
+       mydailyDate= new Date(1000*dailyDataArray[i].time);
+       var daystring = mydailyDate.toString()
+       var day = daystring.slice(0,3)
+       var dayHigh = dailyDataArray[i].temperatureMax;
+       var dayLow = dailyDataArray[i].temperatureMin;
+       graphData.push([day,dayLow,dayHigh]);     
+     }
+    var data = google.visualization.arrayToDataTable(graphData);
 
     var options = {
-    legend: { position: 'none' }, 
+      legend: { position: 'none' },
       chart: {
         title: 'observed',
-        
-        subtitle: ''
-      },
-      bars: 'vertical', 
-      series: {
-        0: { axis: 'days' }, 
-        1: { axis: 'temp' } 
-      },
-      axes: {
-        x: {
-          days: {label: 'parsecs'}, // Bottom x-axis.
-          temp: {side: 'top', label: 'apparent magnitude'} // Top x-axis.
-        }
+        subtitle: '',
       }
     };
 
-  var chart = new google.charts.Bar(document.getElementById('DFgraph'));
-  chart.draw(data, options);
-};
+    var chart = new google.charts.Bar(document.getElementById('DFgraph'));
+
+    chart.draw(data, google.charts.Bar.convertOptions(options));
+}
 
 
 
@@ -130,9 +119,6 @@ function dailygraph() {
 
 
 
-
-
-// getData()
 
 
 
