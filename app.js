@@ -55,16 +55,17 @@ function drawChart() {
 	var hourlyDataArray = state.data.hourly.data;
 	var graphData =[['hour','']]
 	var startDate = new Date(1000*hourlyDataArray[0].time);
-	var startTime = startDate.toLocaleString().slice(11,23)
+	var startTime = startDate.toLocaleString().slice(9,23)
+  console.log('startTime', startTime)
 	var endDate = new Date(1000*hourlyDataArray[11].time);
-	var endTime = endDate.toLocaleString().slice(11,23)
+	var endTime = endDate.toLocaleString().slice(9,23)
 	$( ".hourlytime" ).html(startTime);
 	$( ".hourlyendtime" ).html(endTime);
 
 	for (i = 0; i < 12; i++) { 
     	myDate= new Date(1000*hourlyDataArray[i].time);
     	time = (myDate.toLocaleString());
-    	dirtyData = time.slice(11,13)
+    	dirtyData = time.slice(10,12)
     	var cleanData = dirtyData.replace(/:/i, '');
     	var hourlyTemp = hourlyDataArray[i].temperature
     	graphData.push([cleanData,hourlyTemp])
