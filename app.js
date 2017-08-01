@@ -56,7 +56,6 @@ function drawChart() {
 	var graphData =[['hour','']]
 	var startDate = new Date(1000*hourlyDataArray[0].time);
 	var startTime = startDate.toLocaleString().slice(9,23)
-  console.log('startTime', startTime)
 	var endDate = new Date(1000*hourlyDataArray[11].time);
 	var endTime = endDate.toLocaleString().slice(9,23)
 	$( ".hourlytime" ).html(startTime);
